@@ -15,9 +15,6 @@
         "virtualMachineRG": {
             "type": "string"
         },
-        "osDiskType": {
-            "type": "string"
-        },
         "virtualMachineSize": {
             "type": "string",
             "defaultValue": "Standard_B1s",
@@ -159,9 +156,8 @@
                 "storageProfile": {
                     "osDisk": {
                         "createOption": "fromImage",
-                        "managedDisk": {
-                            "storageAccountType": "[parameters('osDiskType')]"
-                        }
+                         "name": "[concat(parameters('virtualMachineName'),'_OSDisk')]",
+                         "caching": "ReadWrite"
                     },
                     "imageReference": {
                         "publisher": "canonical",
