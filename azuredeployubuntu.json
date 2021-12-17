@@ -9,9 +9,6 @@
                 "description": "Location for all resources."
             }
         },
-        "networkSecurityGroupRules": {
-            "type": "array"
-        },
         "subnetName": {
             "type": "string"
         },
@@ -125,6 +122,43 @@
                 "Usage": "test"
             }
         },
+              {
+        "comments": "Default Network Security Group for template",
+        "type": "Microsoft.Network/networkSecurityGroups",
+        "apiVersion": "2020-05-01",
+        "name": "[variables('networkSecurityGroupName')]",
+        "location": "[parameters('location')]",
+        "properties": {
+          "securityRules": [
+            {
+              "name": "default-allow-22",
+              "properties": {
+                "priority": 1000,
+                "access": "Allow",
+                "direction": "Inbound",
+                "destinationPortRange": "22",
+                "protocol": "Tcp",
+                "sourceAddressPrefix": "*",
+                "sourcePortRange": "*",
+                "destinationAddressPrefix": "*"
+              }
+            },
+            {
+              "name": "default-allow-80",
+              "properties": {
+                "priority": 1001,
+                "access": "Allow",
+                "direction": "Inbound",
+                "destinationPortRange": "80",
+                "protocol": "Tcp",
+                "sourceAddressPrefix": "*",
+                "sourcePortRange": "*",
+                "destinationAddressPrefix": "*"
+              }
+            }
+          ]
+        }
+      },
         {
             "name": "[parameters('virtualMachineName')]",
             "type": "Microsoft.Compute/virtualMachines",
