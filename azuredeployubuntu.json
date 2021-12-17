@@ -7,6 +7,7 @@
             "defaultValue": "[resourceGroup().location]",
             "metadata": {
                 "description": "Location for all resources."
+            }
         },
         "networkInterfaceName": {
             "type": "string"
