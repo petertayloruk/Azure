@@ -9,16 +9,7 @@
                 "description": "Location for all resources."
             }
         },
-        "virtualNetworkId": {
-            "type": "string"
-        },
-        "publicIpAddressSku": {
-            "type": "string"
-        },
         "virtualMachineName": {
-            "type": "string"
-        },
-        "virtualMachineComputerName": {
             "type": "string"
         },
         "virtualMachineRG": {
