@@ -9,9 +9,6 @@
                 "description": "Location for all resources."
             }
         },
-        "subnetName": {
-            "type": "string"
-        },
         "virtualNetworkId": {
             "type": "string"
         },
@@ -58,9 +55,10 @@
     "variables": {
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroupName'))]",
         "vnetId": "[parameters('virtualNetworkId')]",
-        "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]",
+        "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
         "networkInterfaceName": "myVMNicName",
-        "networkSecurityGroupName": "default-NSG"
+        "networkSecurityGroupName": "default-NSG",
+        "subnetName": "defaultSubnet"
     },
     "resources": [
         {
