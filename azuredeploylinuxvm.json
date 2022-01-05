@@ -41,7 +41,7 @@
         "defaultValue": "Standard_B1s",
         "allowedValues": [
           "Standard_B1s"
-        ],
+        ]
       },
       "location": {
         "type": "string",
