@@ -35,11 +35,11 @@
         }
     },
     "variables": {
+        "networkSecurityGroupName": "default-NSG",
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]",
         "vnetId": "[parameters('virtualNetworkId')]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
         "networkInterfaceName": "myVMNicName",
-        "networkSecurityGroupName": "default-NSG",
         "subnetName": "defaultSubnet",
         "publicIPAddressName": "myPublicIP",
         "publicIPAddressType": "Dynamic"
