@@ -43,7 +43,8 @@
         "networkInterfaceName": "myVMNicName",
         "subnetName": "defaultSubnet",
         "publicIPAddressName": "myPublicIP",
-        "publicIPAddressType": "Dynamic"
+        "publicIPAddressType": "Dynamic",
+        "publicIpAddressSku" : "Basic"
     },
     "resources": [
         {
@@ -99,7 +100,7 @@
                 "publicIpAllocationMethod": "[variables('publicIpAddressType')]"
             },
             "sku": {
-                "name": "[parameters('publicIpAddressSku')]"
+                "name": "[variables('publicIpAddressSku')]"
             },
             "tags": {
                 "Usage": "test"
