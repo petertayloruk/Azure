@@ -40,7 +40,6 @@
         "VirtualNetworkId": "Test-vnet",
         "vnetId": "[variables('virtualNetworkId')]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
-        "networkInterfaceName": "myVMNicName",
         "subnetName": "defaultSubnet",
         "publicIPAddressName": "myPublicIP",
         "publicIPAddressType": "Dynamic",
