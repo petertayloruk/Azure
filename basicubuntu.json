@@ -147,7 +147,7 @@
     {
       "type": "Microsoft.Network/networkSecurityGroups",
       "apiVersion": "2020-06-01",
-      "name": "[parameters('networkSecurityGroupName')]",
+      "name": "[concat(parameters('vmName'), '-NSG')]",
       "location": "[parameters('location')]",
       "properties": {
         "securityRules": [
