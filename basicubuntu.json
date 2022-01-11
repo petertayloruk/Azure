@@ -216,6 +216,9 @@
         "hardwareProfile": {
           "vmSize": "[parameters('vmSize')]"
         },
+        "protectedSettings": {
+                    "commandToExecute": "sudo apt install -y apache2"
+        },
         "storageProfile": {
           "osDisk": {
             "createOption": "FromImage",
