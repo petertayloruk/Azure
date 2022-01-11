@@ -178,7 +178,6 @@
     {
       "type": "Microsoft.Network/virtualNetworks/subnets",
       "apiVersion": "2020-06-01",
-      "tags": "[variables('resourcetag')]",
       "name": "[format('{0}/{1}', parameters('virtualNetworkName'), parameters('subnetName'))]",
       "properties": {
         "addressPrefix": "[variables('subnetAddressPrefix')]",
