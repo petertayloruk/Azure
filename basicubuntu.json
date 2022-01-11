@@ -76,6 +76,7 @@
     "osDiskType": "Standard_LRS",
     "subnetAddressPrefix": "10.1.0.0/24",
     "addressPrefix": "10.1.0.0/16",
+    "resourcetag": "TestARMLinux",
     "linuxConfiguration": {
       "disablePasswordAuthentication": true,
       "ssh": {
@@ -94,6 +95,7 @@
       "apiVersion": "2020-06-01",
       "name": "[variables('networkInterfaceName')]",
       "location": "[parameters('location')]",
+      "tags": "[variables('resourcetag')]",
       "properties": {
         "ipConfigurations": [
           {
@@ -124,6 +126,7 @@
       "apiVersion": "2020-06-01",
       "name": "[variables('networkSecurityGroupName')]",
       "location": "[parameters('location')]",
+      "tags": "[variables('resourcetag')]",
       "properties": {
         "securityRules": [
           {
@@ -161,6 +164,7 @@
       "apiVersion": "2020-06-01",
       "name": "[parameters('virtualNetworkName')]",
       "location": "[parameters('location')]",
+      "tags": "[variables('resourcetag')]",
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
@@ -172,6 +176,7 @@
     {
       "type": "Microsoft.Network/virtualNetworks/subnets",
       "apiVersion": "2020-06-01",
+      "tags": "[variables('resourcetag')]",
       "name": "[format('{0}/{1}', parameters('virtualNetworkName'), parameters('subnetName'))]",
       "properties": {
         "addressPrefix": "[variables('subnetAddressPrefix')]",
@@ -187,6 +192,7 @@
       "apiVersion": "2020-06-01",
       "name": "[variables('publicIPAddressName')]",
       "location": "[parameters('location')]",
+      "tags": "[variables('resourcetag')]",
       "sku": {
         "name": "Basic"
       },
@@ -204,6 +210,7 @@
       "apiVersion": "2020-06-01",
       "name": "[parameters('vmName')]",
       "location": "[parameters('location')]",
+      "tags": "[variables('resourcetag')]",
       "properties": {
         "hardwareProfile": {
           "vmSize": "[parameters('vmSize')]"
