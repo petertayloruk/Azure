@@ -76,7 +76,9 @@
     "osDiskType": "Standard_LRS",
     "subnetAddressPrefix": "10.1.0.0/24",
     "addressPrefix": "10.1.0.0/16",
-    "resourcetag": "TestARMLinux",
+    "resourcetag": {
+      "Usage": "TestARMLinux"
+    },
     "linuxConfiguration": {
       "disablePasswordAuthentication": true,
       "ssh": {
