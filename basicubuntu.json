@@ -76,6 +76,7 @@
     "osDiskType": "Standard_LRS",
     "subnetAddressPrefix": "10.1.0.0/24",
     "addressPrefix": "10.1.0.0/16",
+    "apacheinstallcmd": "sudo apt install -y apache2",
     "resourcetag": {
       "Usage": "TestARMLinux"
     },
@@ -217,7 +218,7 @@
           "vmSize": "[parameters('vmSize')]"
         },
         "settings": {
-                    "commandToExecute": "sudo apt install -y apache2"
+                    "commandToExecute": "[variables('apacheinstallcmd')]"
         },
         "storageProfile": {
           "osDisk": {
