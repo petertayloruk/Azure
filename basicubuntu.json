@@ -216,7 +216,7 @@
         "hardwareProfile": {
           "vmSize": "[parameters('vmSize')]"
         },
-        "protectedSettings": {
+        "settings": {
                     "commandToExecute": "sudo apt install -y apache2"
         },
         "storageProfile": {
