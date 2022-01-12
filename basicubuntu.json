@@ -217,9 +217,6 @@
         "hardwareProfile": {
           "vmSize": "[parameters('vmSize')]"
         },
-        "settings": {
-                    "commandToExecute": "[variables('apacheinstallcmd')]"
-        },
         "storageProfile": {
           "osDisk": {
             "createOption": "FromImage",
@@ -251,8 +248,27 @@
       "dependsOn": [
         "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaceName'))]"
       ]
+    },
+    {
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "name": "[concat(parameters('vmName'),'/newuserscript')]",
+      "apiVersion": "2020-12-01",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[resourceid('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
+      ],
+      "properties": {
+        "publisher": "Microsoft.Azure.Extensions",
+        "type": "CustomScript",
+        "typeHandlerVersion": "2.0",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
+          "commandToExecute": "sudo apt install -y apache2"
+        }
+      }
     }
   ],
+  
   "outputs": {
     "adminUsername": {
       "type": "string",
