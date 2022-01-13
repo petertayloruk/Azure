@@ -22,13 +22,6 @@
         "description": "Password for the Virtual Machine."
       }
     },
-    "dnsLabelPrefix": {
-      "type": "string",
-      "defaultValue": "[toLower(format('{0}-{1}', parameters('vmName'), uniqueString(resourceGroup().id, parameters('vmName'))))]",
-      "metadata": {
-        "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
-      }
-    },
     "publicIPAllocationMethod": {
       "type": "string",
       "defaultValue": "Dynamic",
@@ -78,6 +71,7 @@
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
+    "dnsLabelPrefix": "[toLower(format(concat(parameters('vmname'), '-taylor')))]",
     "virtualNetworkName": "[concat(parameters('vmName'), '-vnet')]",
     "PublicIpName": "[format('{0}-PublicIP', parameters('vmName'))]",
     "networkSecurityGroupName": "[concat(parameters('vmName'), '-NSG')]",
@@ -109,7 +103,7 @@
       "properties": {
         "publicIPAllocationMethod": "[parameters('publicIPAllocationMethod')]",
         "dnsSettings": {
-          "domainNameLabel": "[parameters('dnsLabelPrefix')]"
+          "domainNameLabel": "[variables('dnsLabelPrefix')]"
         }
       }
     },
