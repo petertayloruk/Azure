@@ -29,13 +29,6 @@
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
     },
-    "publicIpName": {
-      "type": "string",
-      "defaultValue": "myPublicIP",
-      "metadata": {
-        "description": "Name for the Public IP used to access the Virtual Machine."
-      }
-    },
     "publicIPAllocationMethod": {
       "type": "string",
       "defaultValue": "Dynamic",
@@ -56,16 +49,6 @@
       ],
       "metadata": {
         "description": "SKU for the Public IP used to access the Virtual Machine."
-      }
-    },
-    "OSVersion": {
-      "type": "string",
-      "defaultValue": "win11-21h2-pro",
-      "allowedValues": [
-        "win11-21h2-pro"
-      ],
-      "metadata": {
-        "description": "The Windows version for the VM. This will pick a fully patched Gen2 image of this given Windows version."
       }
     },
     "vmSize": {
@@ -91,12 +74,13 @@
   },
    "variables": {
     "storageAccountName": "[format('bootdiags{0}', uniqueString(resourceGroup().id))]",
-    "nicName": "myVMNic",
+    "nicName": "[format('{0}-NICInt', parameters('vmName'))]",
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
-    "virtualNetworkName": "MyVNET",
-    "networkSecurityGroupName": "default-NSG"
+    "virtualNetworkName": "[concat(parameters('vmName'), '-vnet')]",
+    "PublicIpName": "[format('{0}PublicIP', parameters('vmName'))]",
+    "networkSecurityGroupName": "[concat(parameters('vmName'), '-NSG')]"
   },
   "resources": [
     {
@@ -112,7 +96,7 @@
     {
       "type": "Microsoft.Network/publicIPAddresses",
       "apiVersion": "2021-02-01",
-      "name": "[parameters('publicIpName')]",
+      "name": "[variables('PublicIpName')]",
       "location": "[parameters('location')]",
       "sku": {
         "name": "[parameters('publicIpSku')]"
@@ -186,7 +170,7 @@
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
               "publicIPAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIpName'))]"
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('PublicIpName'))]"
               },
               "subnet": {
                 "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]"
@@ -196,7 +180,7 @@
         ]
       },
       "dependsOn": [
-        "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIpName'))]",
+        "[resourceId('Microsoft.Network/publicIPAddresses', variables('PublicIpName'))]",
         "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]"
       ]
     },
@@ -226,14 +210,7 @@
             "managedDisk": {
               "storageAccountType": "Standard_LRS"
             }
-          },
-          "dataDisks": [
-            {
-              "diskSizeGB": 1023,
-              "lun": 0,
-              "createOption": "Empty"
-            }
-          ]
+          }
         },
         "networkProfile": {
           "networkInterfaces": [
@@ -258,7 +235,7 @@
   "outputs": {
     "hostname": {
       "type": "string",
-      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIpName'))).dnsSettings.fqdn]"
+      "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', variables('PublicIpName'))).dnsSettings.fqdn]"
     }
   }
 }
