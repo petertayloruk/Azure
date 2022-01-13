@@ -79,8 +79,11 @@
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
     "virtualNetworkName": "[concat(parameters('vmName'), '-vnet')]",
-    "PublicIpName": "[format('{0}PublicIP', parameters('vmName'))]",
-    "networkSecurityGroupName": "[concat(parameters('vmName'), '-NSG')]"
+    "PublicIpName": "[format('{0}-PublicIP', parameters('vmName'))]",
+    "networkSecurityGroupName": "[concat(parameters('vmName'), '-NSG')]",
+        "resourcetag": {
+      "Usage": "2019Core"
+    }
   },
   "resources": [
     {
@@ -88,6 +91,7 @@
       "apiVersion": "2021-04-01",
       "name": "[variables('storageAccountName')]",
       "location": "[parameters('location')]",
+      "tags": "[variables('resourcetag')]",
       "sku": {
         "name": "Standard_LRS"
       },
@@ -98,6 +102,7 @@
       "apiVersion": "2021-02-01",
       "name": "[variables('PublicIpName')]",
       "location": "[parameters('location')]",
+      "tags": "[variables('resourcetag')]",
       "sku": {
         "name": "[parameters('publicIpSku')]"
       },
@@ -113,6 +118,7 @@
       "apiVersion": "2021-02-01",
       "name": "[variables('networkSecurityGroupName')]",
       "location": "[parameters('location')]",
+      "tags": "[variables('resourcetag')]",
       "properties": {
         "securityRules": [
           {
@@ -136,6 +142,7 @@
       "apiVersion": "2021-02-01",
       "name": "[variables('virtualNetworkName')]",
       "location": "[parameters('location')]",
+      "tags": "[variables('resourcetag')]",
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
@@ -163,6 +170,7 @@
       "apiVersion": "2021-02-01",
       "name": "[variables('nicName')]",
       "location": "[parameters('location')]",
+      "tags": "[variables('resourcetag')]",
       "properties": {
         "ipConfigurations": [
           {
@@ -189,6 +197,7 @@
       "apiVersion": "2021-03-01",
       "name": "[parameters('vmName')]",
       "location": "[parameters('location')]",
+      "tags": "[variables('resourcetag')]",
       "properties": {
         "hardwareProfile": {
           "vmSize": "[parameters('vmSize')]"
