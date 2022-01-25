@@ -262,7 +262,7 @@
         "typeHandlerVersion": "2.0",
         "autoUpgradeMinorVersion": true,
         "settings": {
-          "commandToExecute": "sudo apt install -y apache2 php && wget -O /var/www/html/calculate.php https://raw.githubusercontent.com/petertayloruk/Azure/main/calculate.php"
+          "commandToExecute": "sudo apt install -y apache2 && sudo apt install -y php && sudo wget -O /var/www/html/calculate.php https://raw.githubusercontent.com/petertayloruk/Azure/main/calculate.php"
         }
       }
     }
