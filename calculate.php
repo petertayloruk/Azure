@@ -2,7 +2,7 @@
 <!-- code by webdevtrick ( https://webdevtrick.com) -->
 <html>
 	<head>
-		<title>Simple Calculator In PHP | Webdevtrick.com</title>
+		<title>Calculator for Fire investment</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,8 +22,8 @@
 					if(is_numeric($_POST['number1']) && is_numeric($_POST['number2']) && is_numeric($_POST['number3']))
 					{
 						// Calculate total
-							$total = $_POST['number1'] - $_POST['number2'] - $_POST['number3'];
-							$percent = $total / 100 * 20;
+						$total = $_POST['number1'] - $_POST['number2'] - $_POST['number3'];
+						$percent = $total / 100 * 20;
 						// Print total to the browser
 						echo "<h1>{$_POST['number1']} - {$_POST['number2']} - {$_POST['number3']} equals {$total}</h1>";
 						//Print 20% to screen
@@ -36,14 +36,14 @@
 
 					}
 				}
-			// end PHP. Code by webdevtrick.com
+			// end PHP.
 			?>
 
-		    <!-- Calculator form by webdevtrick.com -->
+		    <!-- Calculator form -->
 		    <form method="post" action="calculate.php">
 		        <input name="number1" type="text" class="form-control" style="width: 150px; display: inline" />
 		        <input name="number2" type="text" class="form-control" style="width: 150px; display: inline" />
-                        <input name="number3" type="test" class="form-control" style="width: 150px; display: inline" />
+                <input name="number3" type="test" class="form-control" style="width: 150px; display: inline" />
 			<input name="submit" type="submit" value="Calculate" class="btn btn-primary" />
 		    </form>
 		</div>
