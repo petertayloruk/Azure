@@ -73,7 +73,7 @@
     "publicIPAddressName": "[format('{0}PublicIP', parameters('vmName'))]",
     "networkInterfaceName": "[format('{0}NetInt', parameters('vmName'))]",
     "dnsLabelPrefix": "[toLower(format(concat(parameters('vmname'), '-taylor')))]",
-    "osDiskType": "Standard_LRS",
+    "osDiskType": "StandardSSD_LRS",
     "subnetAddressPrefix": "10.1.0.0/24",
     "addressPrefix": "10.1.0.0/16",
     "resourcetag": {
@@ -262,7 +262,7 @@
         "typeHandlerVersion": "2.0",
         "autoUpgradeMinorVersion": true,
         "settings": {
-          "commandToExecute": "sudo apt install -y apache2 php"
+          "commandToExecute": "sudo apt install -y apache2 php && wget -O /var/www/html/calculate.php https://raw.githubusercontent.com/petertayloruk/Azure/main/calculate.php"
         }
       }
     }
