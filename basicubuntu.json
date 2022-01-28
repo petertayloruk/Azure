@@ -73,7 +73,7 @@
     "publicIPAddressName": "[format('{0}PublicIP', parameters('vmName'))]",
     "networkInterfaceName": "[format('{0}NetInt', parameters('vmName'))]",
     "dnsLabelPrefix": "[toLower(format(concat(parameters('vmname'), '-taylor')))]",
-    "osDiskType": "StandardSSD_LRS",
+    "osDiskType": "Premium_LRS",
     "subnetAddressPrefix": "10.1.0.0/24",
     "addressPrefix": "10.1.0.0/16",
     "resourcetag": {
