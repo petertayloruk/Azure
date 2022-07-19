@@ -41,9 +41,9 @@ if(isset($_GET['delete_id']))
 <table width="100%" border="1" style="border-collapse:collapse;">
 <thead>
 <tr>
-<th><strong>Date</strong></th>
-<th><strong>Profit (USDT)</strong></th>
-<th><strong>Commission (USDT)</strong></th>
+<th><strong>Question id</strong></th>
+<th><strong>Question</strong></th>
+<th><strong>Answer id</strong></th>
 <th><strong>Edit</strong></th>
 <th><strong>Delete</strong></th>
 </tr>
@@ -59,7 +59,7 @@ echo "<tr>";
 echo "<td align=center>".$row['id']."</td>";
 echo "<td align=center>".$row['question']."</td>";
 echo "<td align=center>".$row['right_option']."</td>";
-echo "<td align=center><a href='edit.php?id=".$row['Id']."'>Edit</a></td>";
+echo "<td align=center><a href='edit.php?id=".$row['id']."'>Edit</a></td>";
 echo "<td align=center><a href='javascript:delete_id($row[Id])'>Delete</a></td>";
 //echo "<td align=center><a onclick='javascript:confirmation($(this));return false;' href='delete.php?id=".$row['Id']."'>Delete</a></td>";
 echo "</tr>";
