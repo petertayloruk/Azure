@@ -35,7 +35,6 @@ if(isset($_GET['delete_id']))
 
 </head>
 <body>
-//<?php include("header.php"); ?>
 <table class="form">
 <h2>View Records</h2>
 <table width="100%" border="1" style="border-collapse:collapse;">
