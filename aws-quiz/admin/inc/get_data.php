@@ -5,7 +5,7 @@ require_once('db.php');
 //include('auth.php');
 //$username=$_SESSION["username"];
 
-$sqlQuery = "SELECT questions.id, questions.question, questions.right_option options.option"' AND questions.deleted='0' ORDER BY questions.id";
+$sqlQuery = "SELECT questions.id, questions.question, questions.right_option options.option AND questions.deleted='0' ORDER BY questions.id";
 
 $result = mysqli_query($con,$sqlQuery);
 
