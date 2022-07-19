@@ -3,6 +3,8 @@
 require('inc/db.php');
 //include("inc/auth.php");
 
+ini_set('display_errors', 1); //show errors
+
 $username=$_SESSION["username"];
 $sql_query="SELECT * FROM question WHERE username='".username."' ORDER BY Date";
 $result_set=mysqli_query($con,$sql_query);
