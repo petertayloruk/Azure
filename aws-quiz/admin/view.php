@@ -43,6 +43,13 @@ if(isset($_GET['delete_id']))
 <th><strong>Question id</strong></th>
 <th><strong>Question</strong></th>
 <th><strong>Answer id</strong></th>
+<th><strong>Option1</strong></th>
+<th><strong>Option2</strong></th>
+<th><strong>Option3</strong></th>
+<th><strong>Option4</strong></th>
+<th><strong>Option5</strong></th>
+<th><strong>Option6</strong></th>
+<th><strong>Option7</strong></th>
 <th><strong>Deleted</strong></th>
 <th><strong>Deleted Timestamp</strong></th>
 <th><strong>Edit</strong></th>
