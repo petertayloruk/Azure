@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "examtest.cmuslrz5iv3y.eu-west-2.rds.amazonaws.com",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "examtest.cmuslrz5iv3y.eu-west-2.rds.amazonaws.com",
+            "database": "examtest",
+            "username": "admin",
+            "password": "Blackforrestaeroplane"
+        }
+    ]
+}
