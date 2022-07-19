@@ -63,7 +63,7 @@ $count=1;
 $sel_query="SELECT * FROM questions";
 $result = mysqli_query($con,$sel_query);
 while($row = mysqli_fetch_assoc($result)) {
-    $ans_query="SELECT * FROM options WHERE question_id =.$row['id'].";
+    $ans_query="SELECT * FROM options WHERE question_id=.$row['id'].";
     $answerresult = mysqli_query($con,$ans_query);
     while($answer = mysqli_fetch_assoc($answerresult)) {
 echo "<tr>";
