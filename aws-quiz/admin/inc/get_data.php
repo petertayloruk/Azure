@@ -6,7 +6,7 @@ require_once('db.php');
 //$username=$_SESSION["username"];
 
 //$sqlQuery = "SELECT questions.id, questions.question, questions.right_option, options.option FROM questions, options WHERE questions.deleted='0' ORDER BY questions.id";
-$sqlQuery = "SELECT questions.id, questions.question, questions.right_option, options.`option` FROM questions INNER JOIN options ON questions.id=options.question_id";
+$sqlQuery = "SELECT questions.id, questions.question, questions.right_option, options.option FROM questions INNER JOIN options ON questions.id=options.question_id";
 $result = mysqli_query($con,$sqlQuery);
 
 $data = array();
