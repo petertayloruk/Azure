@@ -5,8 +5,8 @@ require('inc/db.php');
 
 ini_set('display_errors', 1); //show errors
 
-$username=$_SESSION["username"];
-$sql_query="SELECT * FROM question WHERE username='".username."' ORDER BY Date";
+//$username=$_SESSION["username"];
+$sql_query="SELECT * FROM question;
 $result_set=mysqli_query($con,$sql_query);
 
 if(isset($_GET['delete_id']))
