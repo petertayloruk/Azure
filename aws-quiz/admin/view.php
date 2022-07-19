@@ -77,7 +77,7 @@ echo "<td align=center><a href='javascript:delete_id($row[id])'>Delete</a></td>"
 //echo "<td align=center><a onclick='javascript:confirmation($(this));return false;' href='delete.php?id=".$row['Id']."'>Delete</a></td>";
 echo "</tr>";
 ?>
-<?php $count++; } ?>
+<?php $count++; }} ?>
 </tbody>
 </table>
 <?php echo "number of rows: ", $count; 
