@@ -13,7 +13,7 @@ if(isset($_GET['delete_id']))
 {
  //$delete_query="DELETE FROM profit WHERE Id=".$_GET['delete_id'];
  $deletedtimestamp=date("Y-m-d H:i:s");
- $delete_query="UPDATE profit SET DELETED='1', DeletedTimestamp='".$deletedtimestamp."' WHERE Id=".$_GET['delete_id'];
+ $delete_query="UPDATE questions SET deleted='1', DeletedTimestamp='".$deletedtimestamp."' WHERE Id=".$_GET['delete_id'];
  mysqli_query($con,$delete_query);
  header("Location: view.php");
 }
