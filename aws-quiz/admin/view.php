@@ -6,7 +6,7 @@ require('inc/db.php');
 ini_set('display_errors', 1); //show errors
 
 //$username=$_SESSION["username"];
-$sql_query="SELECT * FROM question;
+$sql_query="SELECT * FROM questions";
 $result_set=mysqli_query($con,$sql_query);
 
 if(isset($_GET['delete_id']))
@@ -52,7 +52,7 @@ if(isset($_GET['delete_id']))
 <?php
 $count=1;
 //$username=$_SESSION["username"];
-$sel_query="SELECT * FROM profit WHERE username='".$username."' AND Deleted='0' ORDER BY Date";
+$sel_query="SELECT * FROM questions";
 $result = mysqli_query($con,$sel_query);
 while($row = mysqli_fetch_assoc($result)) {
 echo "<tr>";
