@@ -35,7 +35,7 @@ if(isset($_GET['delete_id']))
 
 </head>
 <body>
-<?php include("header.php"); ?>
+//<?php include("header.php"); ?>
 <table class="form">
 <h2>View Records</h2>
 <table width="100%" border="1" style="border-collapse:collapse;">
@@ -60,7 +60,7 @@ echo "<td align=center>".$row['id']."</td>";
 echo "<td align=center>".$row['question']."</td>";
 echo "<td align=center>".$row['right_option']."</td>";
 echo "<td align=center><a href='edit.php?id=".$row['id']."'>Edit</a></td>";
-echo "<td align=center><a href='javascript:delete_id($row[Id])'>Delete</a></td>";
+echo "<td align=center><a href='javascript:delete_id($row[id])'>Delete</a></td>";
 //echo "<td align=center><a onclick='javascript:confirmation($(this));return false;' href='delete.php?id=".$row['Id']."'>Delete</a></td>";
 echo "</tr>";
 ?>
