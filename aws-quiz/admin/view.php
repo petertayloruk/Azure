@@ -57,7 +57,7 @@ $result = mysqli_query($con,$sel_query);
 while($row = mysqli_fetch_assoc($result)) {
 echo "<tr>";
 echo "<td align=center>".$row['id']."</td>";
-echo "<td align=center>".$row['question]."</td>";
+echo "<td align=center>".$row['question']."</td>";
 echo "<td align=center>".$row['right_option']."</td>";
 echo "<td align=center><a href='edit.php?id=".$row['Id']."'>Edit</a></td>";
 echo "<td align=center><a href='javascript:delete_id($row[Id])'>Delete</a></td>";
