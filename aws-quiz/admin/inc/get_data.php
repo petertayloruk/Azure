@@ -10,7 +10,9 @@ $result = mysqli_query($con,$sqlQuery);
 
 $data = array();
 foreach ($result as $row) {
-	$data[] = $row;
+    $row = json_decode($row);
+    $rowfiltered = array_filter($row);
+	$data[] = $rowfiltered;
 }
 
 mysqli_close($con);
