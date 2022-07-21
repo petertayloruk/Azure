@@ -12,7 +12,6 @@ let availableQuesions = [];
 let questions = [];
 
 fetch('questions.json')
-    console.log('questions have been loaded'); //this can be removed once working
     .then((res) => {
         return res.json();
     })
