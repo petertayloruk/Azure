@@ -10,8 +10,7 @@ $result = mysqli_query($con,$sqlQuery);
 
 $data = array();
 foreach ($result as $row) {
-    //$row = json_decode($row);
-    $rowfiltered = array_filter($row);
+    $rowfiltered = array_filter($row); //filter out any NULL results. i.e if there isn't 5 options, or 2 answers don't show the result.
 	$data[] = $rowfiltered;
 }
 
