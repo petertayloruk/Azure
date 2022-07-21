@@ -11,7 +11,7 @@ let availableQuesions = [];
 
 let questions = [];
 
-fetch('http://35.178.173.126/Azure/aws-quiz/admin/inc/get_data.php')
+fetch('questions.json')
     .then((res) => {
         return res.json();
     })
