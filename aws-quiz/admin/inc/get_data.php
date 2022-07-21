@@ -5,7 +5,7 @@ require_once('db.php');
 //include('auth.php');
 //$username=$_SESSION["username"];
 
-$sqlQuery = "SELECT question, choice1, choice2, choice3, choice4, choice5, choice6, answer FROM aws_quiz";
+$sqlQuery = "SELECT question, correct_answer, incorrect_answers FROM aws_quiz";
 $result = mysqli_query($con,$sqlQuery);
 
 $data = array();
