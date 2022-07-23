@@ -1,26 +1,26 @@
 [
     {
-      "question": "Inside which HTML element do we put the JavaScript??",
-      "choice1": "<script>",
-      "choice2": "<javascript>",
-      "choice3": "<js>",
-      "choice4": "<scripting>",
-      "answer": 1
-    },
-    {
-      "question": "What is the correct syntax for referring to an external script called 'xxx.js'?",
-      "choice1": "<script href='xxx.js'>",
-      "choice2": "<script name='xxx.js'>",
-      "choice3": "<script src='xxx.js'>",
-      "choice4": "<script file='xxx.js'>",
+      "question": "Which AWS service enables users to deploy infrastructure as code by automating the process of provisioning resources?",
+      "choice1": "AWS Glue",
+      "choice2": "Amazon GameLift",
+      "choice3": "AWS CloudFormation",
+      "choice4": "AWS Data Pipeline",
       "answer": 3
     },
     {
-      "question": " How do you write 'Hello World' in an alert box?",
-      "choice1": "msgBox('Hello World');",
-      "choice2": "alertBox('Hello World');",
-      "choice3": "msg('Hello World');",
-      "choice4": "alert('Hello World');",
+      "question": "Which of the following allows users to provision a dedicated network connection from their internal network to AWS?",
+      "choice1": "AWS VPN",
+      "choice2": "Amazon Connect",
+      "choice3": "AWS Direct Connect",
+      "choice4": "AWS CloudHSM",
+      "answer": 3
+    },
+    {
+      "question": "Which service would provide network connectivity in a hybrid architecture that includes the AWS Cloud?",
+      "choice1": "AWS Direct Connect",
+      "choice2": "Amazon API Gateway",
+      "choice3": "AWS Directory Service",
+      "choice4": "Amazon VPC",
       "answer": 4
     }
   ]
